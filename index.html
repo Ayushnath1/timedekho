@@ -3,33 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Time by Country</title>
+  <title>World Time - 242 Countries</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>🌍 World Time Explorer</h1>
-    <p>Select a country to view its current time</p>
-  </header>
+<header>
+  <h1>🌍 World Time Explorer</h1>
+  <p>View real-time time & date for 242 countries</p>
+</header>
 
-  <div class="container">
-    <div class="country-list">
-      <h2>Countries</h2>
-      <ul id="countryList"></ul> <!-- AUTO country list -->
-    </div>
+<div class="container">
 
-    <div class="time-box">
-      <h2 id="countryTitle">Select a country</h2>
-      <p id="timeDisplay">Time will appear here</p>
-      <p id="dateDisplay"></p>
-    </div>
+  <!-- Sidebar Country List -->
+  <div class="country-list">
+    <input type="text" id="searchBar" placeholder="Search country...">
+    <ul id="countryList"></ul>
   </div>
 
-  <footer>
-    <p>Made with ❤️ | Live World Clock</p>
-  </footer>
+  <!-- Time Display -->
+  <div class="time-box">
+    <h2 id="countryTitle">Select a Country</h2>
+    <p id="timeDisplay">---</p>
+    <p id="dateDisplay"></p>
+  </div>
 
-  <script src="script.js"></script>
+</div>
+
+<footer>
+  <p>Made with ❤️ | Real-Time Global Clock</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
