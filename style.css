@@ -1,89 +1,81 @@
 body {
   margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: #0f172a;
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
-/* HEADER */
 header {
   text-align: center;
   padding: 20px;
 }
 
 header h1 {
-  font-size: 32px;
   color: #38bdf8;
+  font-size: 34px;
 }
 
-/* MAIN LAYOUT */
 .container {
   display: flex;
-  gap: 20px;
   padding: 20px;
+  gap: 20px;
 }
 
-/* COUNTRY LIST */
-.country-list {
+.sidebar {
   width: 30%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.05);
   padding: 15px;
   border-radius: 12px;
+  backdrop-filter: blur(10px);
   height: 80vh;
   overflow-y: scroll;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.country-list input {
+.sidebar input {
   width: 100%;
   padding: 12px;
+  font-size: 15px;
   border-radius: 8px;
   border: none;
-  margin-bottom: 15px;
-  font-size: 15px;
   background: rgba(255,255,255,0.15);
   color: white;
+  margin-bottom: 10px;
 }
 
-.country-list ul {
+.sidebar ul {
   list-style: none;
   padding: 0;
 }
 
-.country-list li {
+.sidebar li {
   padding: 10px;
-  background: rgba(255,255,255,0.08);
-  margin-bottom: 8px;
   border-radius: 8px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.10);
   cursor: pointer;
   transition: 0.25s;
 }
 
-.country-list li:hover {
-  background: rgba(255,255,255,0.18);
+.sidebar li:hover {
+  background: rgba(255,255,255,0.20);
   transform: scale(1.03);
 }
 
-/* TIME BOX */
 .time-box {
   flex: 1;
-  background: rgba(255,255,255,0.06);
   padding: 30px;
   border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
   text-align: center;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .time-box h2 {
-  margin-bottom: 10px;
   color: #38bdf8;
 }
 
 #timeDisplay {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -93,10 +85,9 @@ header h1 {
   color: #e2e8f0;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
-  padding: 12px;
+  padding: 15px;
   color: #94a3b8;
 }
 
@@ -104,8 +95,7 @@ footer {
   .container {
     flex-direction: column;
   }
-
-  .country-list {
+  .sidebar {
     width: 100%;
     height: auto;
   }
