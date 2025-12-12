@@ -73,7 +73,7 @@ const countries = {
   "New Zealand": "Pacific/Auckland",
   "Fiji": "Pacific/Fiji",
   "Samoa": "Pacific/Apia",
-  "Tonga": "Pacific/Tongka",
+  "Tonga": "Pacific/Tongatapu",
   "Papua New Guinea": "Pacific/Port_Moresby",
 
   "South Africa": "Africa/Johannesburg",
@@ -109,34 +109,39 @@ const countries = {
   "Dominican Republic": "America/Santo_Domingo"
 };
 
-// DOM element
+// DOM elements
 const listEl = document.getElementById("countryList");
 
-// Populate 100 countries in list
+// Add all countries to website list
 for (let country in countries) {
   const li = document.createElement("li");
   li.textContent = country;
-  li.onclick = () => showTime(country, countries[country]);
+  li.onclick = () => showCountryTime(country, countries[country]);
   listEl.appendChild(li);
 }
 
-// Show selected country's time
-function showTime(country, timezone) {
+// Show correct time of selected country
+function showCountryTime(country, timezone) {
   document.getElementById("countryTitle").textContent = country;
 
-  fetch(`https://worldtimeapi.org/api/timezone/${timezone}`)
-    .then(res => res.json())
-    .then(data => {
-      const dt = new Date(data.datetime);
-      document.getElementById("timeDisplay").textContent = dt.toLocaleTimeString();
-      document.getElementById("dateDisplay").textContent = dt.toDateString();
-    });
+  const countryTime = new Date().toLocaleString("en-US", {
+    timeZone: timezone
+  });
+
+  const dateObj = new Date(countryTime);
+
+  document.getElementById("timeDisplay").textContent =
+    dateObj.toLocaleTimeString("en-US", { hour12: false });
+
+  document.getElementById("dateDisplay").textContent =
+    dateObj.toDateString();
 }
 
-// Auto-update selected country's time every second
+// Auto-refresh selected country time every second
 setInterval(() => {
-  const name = document.getElementById("countryTitle").textContent;
-  if (name !== "Select a country") {
-    showTime(name, countries[name]);
+  const selected = document.getElementById("countryTitle").textContent;
+  if (selected !== "Select a country") {
+    showCountryTime(selected, countries[selected]);
   }
 }, 1000);
+
