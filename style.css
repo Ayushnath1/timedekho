@@ -1,11 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background: #0f172a;
-  color: #fff;
-  font-family: Poppins, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
+/* HEADER */
 header {
   text-align: center;
   padding: 20px;
@@ -16,24 +17,34 @@ header h1 {
   color: #38bdf8;
 }
 
+/* MAIN LAYOUT */
 .container {
   display: flex;
   gap: 20px;
   padding: 20px;
 }
 
+/* COUNTRY LIST */
 .country-list {
   width: 30%;
-  background: #1e293b;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
   height: 80vh;
   overflow-y: scroll;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.country-list h2 {
-  color: #38bdf8;
-  margin-top: 0;
+.country-list input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.15);
+  color: white;
 }
 
 .country-list ul {
@@ -43,44 +54,49 @@ header h1 {
 
 .country-list li {
   padding: 10px;
-  background: #334155;
+  background: rgba(255,255,255,0.08);
   margin-bottom: 8px;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .country-list li:hover {
-  background: #475569;
+  background: rgba(255,255,255,0.18);
+  transform: scale(1.03);
 }
 
+/* TIME BOX */
 .time-box {
   flex: 1;
-  background: #1e293b;
+  background: rgba(255,255,255,0.06);
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .time-box h2 {
-  color: #38bdf8;
   margin-bottom: 10px;
+  color: #38bdf8;
 }
 
 #timeDisplay {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: bold;
 }
 
 #dateDisplay {
   font-size: 20px;
   margin-top: 10px;
-  color: #cbd5e1;
+  color: #e2e8f0;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 10px 0;
+  padding: 12px;
   color: #94a3b8;
 }
 
@@ -88,8 +104,10 @@ footer {
   .container {
     flex-direction: column;
   }
+
   .country-list {
     width: 100%;
     height: auto;
   }
 }
+
